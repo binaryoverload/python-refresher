@@ -5,6 +5,23 @@ class Point:
         self.x = x
         self.y = y
 
+class Rectangle:
+    def __init__(self, x, y, width, height):
+        self.x = x 
+        self.y = y
+        self.width = width
+        self.height = height
+
+    def rect_in_circle(self, circle):
+        if not isinstance(circle, Circle):
+            raise TypeError("The circle provided needs to be of type Circle!")
+        points = (Point(self.x, self.y), Point(self.x + self.width, self.y), Point(self.x, self.y + self.height), Point(self.x + self.width, self.y + self.height))
+        
+        in_circle = True
+        for point in points:
+            in_circle &= circle.point_in_circle(point)
+        return in_circle
+
 class Circle:
     def __init__(self, center, radius):
         if not isinstance(center, Point):
@@ -21,4 +38,6 @@ class Circle:
         return distance <= self.radius
 
 circle = Circle(Point(20, 20), 100)
-print(circle.point_in_circle(Point(119, 20)))
+rect = Rectangle(20, 20, 10, 10)
+
+print(rect.rect_in_circle(circle))
