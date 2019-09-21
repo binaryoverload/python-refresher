@@ -5,6 +5,9 @@ class Point:
         self.x = x
         self.y = y
 
+    def __str__(self):
+        return "Point(x: %g, y: %g)" % (self.x, self.y)
+
 class Rectangle:
     def __init__(self, x, y, width, height):
         self.x = x 
@@ -31,6 +34,9 @@ class Circle:
         self.center = center
         self.radius = radius
 
+    def __str__(self):
+        return "Circle(center: %s, radius: %g)" % (self.center, self.radius)
+
     def point_in_circle(self, point):
         if not isinstance(point, Point):
             raise TypeError("Point is not of type point!")
@@ -39,5 +45,7 @@ class Circle:
 
 circle = Circle(Point(20, 20), 100)
 rect = Rectangle(20, 20, 10, 10)
+
+print(circle)
 
 print(rect.rect_in_circle(circle))
