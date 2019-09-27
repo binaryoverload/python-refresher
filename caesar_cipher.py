@@ -1,6 +1,9 @@
 def caesar_cipher(str, shiftBy):
     output = ""
     for char in str.lower():
+        if char == ' ':
+            output += ' '
+            continue
         output += chr(97 + (((ord(char) - 97) + shiftBy) % 26))
 
     return output
