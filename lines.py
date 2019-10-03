@@ -11,4 +11,5 @@ class Line:
     def length(self):
         return (self.end - self.start).magnitude()
 
-print(Line(Vector2(0, 0), Vector2(3, 4)).length())
+if __name__ == "__main__":
+    print(Line(Vector2(0, 0), Vector2(3, 4)).length())

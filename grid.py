@@ -20,16 +20,17 @@ def grid(columns=2, rows=2, column_width=4, row_height=4):
         grid += get_row_separator(columns, column_width) + "\n"
     return grid
 
-columns = int(input("How many columns?"))
-column_width = int(input("What is the width of the columns?"))
-if column_width < 1:
-    print("Column width needs to be at least 1!")
-    exit(1)
+if __name__ == "__main__":
+    columns = int(input("How many columns?"))
+    column_width = int(input("What is the width of the columns?"))
+    if column_width < 1:
+        print("Column width needs to be at least 1!")
+        exit(1)
 
-rows = int(input("How many rows?"))
-row_height = int(input("What is the height of the rows?"))
-if row_height < 1:
-    print("Row height needs to be at least 1!")
-    exit(1)
+    rows = int(input("How many rows?"))
+    row_height = int(input("What is the height of the rows?"))
+    if row_height < 1:
+        print("Row height needs to be at least 1!")
+        exit(1)
 
-print(grid(columns, rows, column_width, row_height))
+    print(grid(columns, rows, column_width, row_height))

@@ -43,9 +43,10 @@ class Circle:
         distance = math.sqrt((point.x - self.center.x)**2 + (point.y - self.center.y)**2)
         return distance <= self.radius
 
-circle = Circle(Point(20, 20), 100)
-rect = Rectangle(20, 20, 10, 10)
+if __name__ == "__main__":
+    circle = Circle(Point(20, 20), 100)
+    rect = Rectangle(20, 20, 10, 10)
 
-print(circle)
+    print(circle)
 
-print(rect.rect_in_circle(circle))
+    print(rect.rect_in_circle(circle))

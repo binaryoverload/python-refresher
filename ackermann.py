@@ -8,4 +8,5 @@ def ack(m, n):
             return ack(m - 1, ack(m, n - 1))
     return None
 
-print(ack(3, 4))
+if __name__ == "__main__":
+    print(ack(3, 4))

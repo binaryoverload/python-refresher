@@ -12,5 +12,6 @@ def isAbecedarian(word):
             lastLetter = letter
     return len(word) > 0
 
-print(isAbecedarian("abcbcdef"))
+if __name__ == "__main__":
+    print(isAbecedarian("abcbcdef"))
             
